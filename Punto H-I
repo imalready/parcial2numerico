@@ -1,0 +1,20 @@
+f <- function(x) {x*exp(x)}
+integrate(f, lower = 1, upper = 2)
+n<-10
+k<-4
+gherm <- gauss.quad(n, kind="hermite")
+f.new <- function(x)
+mu <- 0
+sigma <- 1/sqrt(k)
+ans2 <- sum(gherm$weights * sigma * myfn.new(sigma*gherm$nodes +mu))  
+all.equal(ans1, ans2)
+
+f <- function(x) {x*exp(x)}
+integrate(f, lower = 1, upper = 2)
+n<-10
+gherm <- gauss.quad(n, kind="hermite")
+f.new <- function(x)
+mu <- 0
+sigma <- 1/2
+ans2 <- sum(gherm$weights * sigma * myfn.new(sigma*gherm$nodes +mu))  
+all.equal(ans1, ans2)
